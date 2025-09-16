@@ -52,6 +52,10 @@ void FSM_Reasoner::Think()
 		//		current state = GuardState::PATROLLING
 		//		selected option = OptionPatrol
 
+		if (actorBlackboard->GetValue("Energy") >= 20){
+			currentState = GuardState::PATROLLING;
+			selectedOption = GetOptionByName("OptionPatrol");
+		}
 	
 	}
 	

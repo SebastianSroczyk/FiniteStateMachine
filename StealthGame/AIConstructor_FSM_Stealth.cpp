@@ -53,10 +53,34 @@ void AIConstructor_FSM_Stealth::DefineActions()
 	AddActionByName("ActionPatrol", patrolFunction);
 
 
-	// TASK TODO - add additional actions below
-	// - use the above Patrol and Rest actions as examples
+	//	**	Chase Action	**
 
+	// Define the function for chase
+	auto chaseFunction = [](AIBrainBlackboardBase& bb) -> ActionStatus {
+		AIActor_Guard* actor = static_cast<AIActor_Guard*>(bb.GetActorContext());
 
+		// Call behaviour function here
+		actor->Chase();
+
+		return ActionStatus::ACTION_SUCCESS;
+
+		};
+
+	AddActionByName("ActionChase", chaseFunction);
+
+	//	**	Investigate Action ** 
+	
+	//Define Investigation action
+	auto investigateFunction = [](AIBrainBlackboardBase& bb) -> ActionStatus {
+		AIActor_Guard* actor = static_cast<AIActor_Guard*>(bb.GetActorContext());
+
+		// Call behaviour function here
+		actor->Investigate();
+
+		return ActionStatus::ACTION_SUCCESS;
+		};
+
+	AddActionByName("ActionInvestigate", investigateFunction);
 }
 
 

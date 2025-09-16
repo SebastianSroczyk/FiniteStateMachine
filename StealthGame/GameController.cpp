@@ -192,20 +192,20 @@ void GameController::HandleKeyPress(const sf::Event::KeyPressed* _keyPress)
     if (!gameRunning)
         return;
 
-    if (_keyPress->code == sf::Keyboard::Key::Left)
+    if (_keyPress->code == sf::Keyboard::Key::A)
     {
         player.x -= playerSpeed;
     }
 
-    else if (_keyPress->code == sf::Keyboard::Key::Right)
+    else if (_keyPress->code == sf::Keyboard::Key::D)
     {
         player.x += playerSpeed;
     }
-    else if (_keyPress->code == sf::Keyboard::Key::Up)
+    else if (_keyPress->code == sf::Keyboard::Key::W)
     {
         player.y -= playerSpeed;
     }
-    else if (_keyPress->code == sf::Keyboard::Key::Down)
+    else if (_keyPress->code == sf::Keyboard::Key::S)
     {
         player.y += playerSpeed;
     }
